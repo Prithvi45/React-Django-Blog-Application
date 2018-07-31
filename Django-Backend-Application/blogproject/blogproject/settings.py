@@ -122,3 +122,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'blogapp.UserProfile'
+
+MEDIA_ROOT = '/vagrant/blogproject/'
+MEDIA_URL = '/'

@@ -63,6 +63,7 @@ class Post(models.Model):
     user_profile = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     content = models.TextField()
+    image = models.ImageField(upload_to='media/images',blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

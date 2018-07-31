@@ -33,5 +33,5 @@ class UserPostFeedSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Post
-        fields = ('id','user_profile','title','created_on','content')
+        fields = ('id','user_profile','title','created_on','content','image')
         extra_kwargs = {'user_profile':{'read_only':True}}
