@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import axios from '../../axios';
-import './FullPost.css';
+import axios from '../../../axios';
 import classes from './FullPost.css';
+
+
 class FullPost extends Component {
     state = {
         loadedPost: null
     }
-
-    componentDidUpdate () {
-        if ( this.props.id ) {
-            if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id) ) {
-                axios.get( '/api/feed/' + this.props.id +'/')
+    componentDidMount () {
+      console.log(this.props.match.params.id)
+        if ( this.props.match.params.id ) {
+            if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.match.params.id) ) {
+                axios.get( '/api/feed/' + this.props.match.params.id +'/')
                     .then( response => {
                         // console.log(response);
                         this.setState( { loadedPost: response.data } );
@@ -18,7 +19,6 @@ class FullPost extends Component {
             }
         }
     }
-
 
     deletePosthandler = () =>{
         axios.delete('/feed/' + this.props.id +'/')
