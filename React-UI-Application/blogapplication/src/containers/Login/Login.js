@@ -32,7 +32,7 @@ class Login extends Component {
     axios.post('/api/login/', data)
         .then(response => {
             console.log(response);
-            axios.defaults.headers.common['Authorization'] = response.data.token;
+            axios.defaults.headers.common['Authorization'] = 'Token' + ' ' + response.data.token;
             alert("User Logged In !, your access token:" + response.data.token);
         });
 
