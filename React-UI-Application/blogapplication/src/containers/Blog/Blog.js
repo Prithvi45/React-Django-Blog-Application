@@ -3,6 +3,8 @@ import axios from '../../axios';
 import Post from '../../components/Post/Post';
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 import './Blog.css';
 import classes from './Blog.css';
 
@@ -63,6 +65,12 @@ class Blog extends Component {
 
                 <section>
                     <NewPost />
+                </section>
+                <section>
+                <Login />
+                </section>
+                <section>
+              
                 </section>
             </div>
         );
