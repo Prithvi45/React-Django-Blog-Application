@@ -134,7 +134,7 @@ class UserPostFeedViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.UserPostFeedSerializer
     queryset = models.Post.objects.all()
-    permission_classes = (permissions.PostOwnStatus, IsAuthenticatedOrReadOnly, IsAuthenticated)
+    permission_classes = (permissions.PostOwnStatus, IsAuthenticatedOrReadOnly)
 
     def perform_create(self, serializer):
         """ sets the user profile to the logged in user """
