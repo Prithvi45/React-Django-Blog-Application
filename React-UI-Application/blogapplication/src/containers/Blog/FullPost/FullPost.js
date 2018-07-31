@@ -13,7 +13,7 @@ class FullPost extends Component {
             if ( !this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.match.params.id) ) {
                 axios.get( '/api/feed/' + this.props.match.params.id +'/')
                     .then( response => {
-                        // console.log(response);
+                        // console.log(response.data);
                         this.setState( { loadedPost: response.data } );
                     } );
             }
@@ -21,7 +21,7 @@ class FullPost extends Component {
     }
 
     deletePosthandler = () =>{
-        axios.delete('/feed/' + this.props.id +'/')
+        axios.delete('/feed/' + this.props.match.params.id +'/')
         .then(response =>{
             console.log(response);
         })
@@ -37,7 +37,9 @@ class FullPost extends Component {
             post = (
                 <div className={classes.FullPost}>
                     <h1>{this.state.loadedPost.title}</h1>
+                      <img src={this.state.loadedPost.image}></img>
                     <p>{this.state.loadedPost.content}</p>
+                    <p><b>By:- {this.state.loadedPost.user_profile}</b></p>
                     <div className="Edit">
                         <button onClick={this.deletePosthandler} className="Delete">Delete</button>
                     </div>

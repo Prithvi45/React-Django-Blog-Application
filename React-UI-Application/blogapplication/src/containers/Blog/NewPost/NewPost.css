@@ -40,3 +40,9 @@
     color: white;
     background-color: #fa923f;
 }
+
+
+.NewPost img {
+    width : 200px;
+    height : 200px;
+}

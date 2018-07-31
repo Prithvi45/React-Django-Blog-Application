@@ -16,11 +16,13 @@ class Posts extends Component {
       axios.get( '/api/feed/' )
           .then( response => {
               console.log(response)
-              const posts = response.data.slice(0, 4);
+              { /*const posts = response.data.slice(0, 4); */}
+                const posts = response.data ;
               const updatedPosts = posts.map(post => {
                   return {
                       ...post,
-                      author: 'Max'
+                      author: post.user_profile,
+                      image:post.image
                   }
               });
               this.setState({posts: updatedPosts});
@@ -45,6 +47,7 @@ class Posts extends Component {
 
                 title={post.title}
                 author={post.author}
+                image={post.image}
                 clicked={() => this.postSelectedHandler(post.id)} />;
                 </Link>
         });
