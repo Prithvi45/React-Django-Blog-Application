@@ -18,14 +18,15 @@ class NewPost extends Component {
     };
 
     postDataHandler = () => {
-        const data = {
-            title: this.state.title,
-            content: this.state.content,
-            image:this.state.image
-            // author: this.state.author
-        };
-        axios.post('http://127.0.0.1:8080/api/feed/', data)
+      const fd = new FormData();
+      fd.append('image',this.state.image, this.state.image.name);
+      fd.append('title', this.state.title);
+      fd.append('content', this.state.content);
+      console.log(this.state.image)
+      console.log("===="+fd)
+        axios.post('http://127.0.0.1:8080/api/feed/', fd)
             .then(response => {
+              alert("New Blog Created !")
                 console.log(response);
             });
     }
