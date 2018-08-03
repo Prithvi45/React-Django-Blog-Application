@@ -33,7 +33,7 @@ class Login extends Component {
         .then(response => {
             console.log(response);
             axios.defaults.headers.common['Authorization'] = 'Token' + ' ' + response.data.token;
-            alert("User Logged In !, your access token:" + response.data.token);
+            alert("User Logged In !");
         });
 
     event.preventDefault();
