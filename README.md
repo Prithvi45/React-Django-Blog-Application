@@ -57,3 +57,12 @@ cd src/profiles_project
 python manage.py runserver 0.0.0.0:8080
 
 ```
+
+After executing above commands , check django development server running on http://127.0.0.1:8080/api/
+Here we are done with backend part , lets go to React App
+
+Navigate to  React-Django-Blog-Application/React-UI-Application/blogapplication from NodeJs terminal and execute below command to start our react project
+
+```bash
+npm start
+```
