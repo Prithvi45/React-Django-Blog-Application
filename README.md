@@ -53,7 +53,6 @@ pip install requirements.txt
 **Start Django development server**
 
 ```bash
-cd src/profiles_project
 python manage.py runserver 0.0.0.0:8080
 
 ```
