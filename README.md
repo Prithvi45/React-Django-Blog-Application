@@ -66,3 +66,4 @@ Navigate to  React-Django-Blog-Application/React-UI-Application/blogapplication 
 ```bash
 npm start
 ```
+once we run above command a new web page opens in your default browser
