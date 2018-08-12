@@ -64,6 +64,7 @@ Here we are done with backend part, lets go to React App
 Navigate to  React-Django-Blog-Application/React-UI-Application/blogapplication from NodeJs terminal and execute below command to start our react project
 
 ```bash
+npm install package.json
 npm start
 ```
 once we run above command a new web page opens in your default browser
